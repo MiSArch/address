@@ -1,7 +1,7 @@
 package org.misarch.address.event
 
 /**
- * Constants for notification event topics used in the application
+ * Constants for address event topics used in the application
  */
 object AddressEvents {
     /**

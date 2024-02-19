@@ -25,7 +25,7 @@ class Query(
 
     @GraphQLDescription("Get a address by id")
     fun address(
-        @GraphQLDescription("The id of the notification")
+        @GraphQLDescription("The id of the address")
         id: UUID,
         dfe: DataFetchingEnvironment
     ): CompletableFuture<Address> {

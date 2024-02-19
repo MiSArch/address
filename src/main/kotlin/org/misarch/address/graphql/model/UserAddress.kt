@@ -23,7 +23,7 @@ class UserAddress(
     val isArchived: Boolean
 ) : Address(id, street1, street2, city, postalCode, country, companyName) {
 
-    @GraphQLDescription("The user this notification was sent to.")
+    @GraphQLDescription("The user this address belongs to.")
     fun user(
         dfe: DataFetchingEnvironment
     ): CompletableFuture<User> {
