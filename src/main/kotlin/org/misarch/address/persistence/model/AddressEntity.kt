@@ -77,16 +77,18 @@ class AddressEntity(
     fun toEventDTO(): AddressDTO {
         return if (userId != null) {
             UserAddressDTO(
+                id = id!!,
                 street1 = street1,
                 street2 = street2,
                 city = city,
                 postalCode = postalCode,
                 country = country,
                 companyName = companyName,
-                userId = userId.toString()
+                userId = userId
             )
         } else {
             VendorAddressDTO(
+                id = id!!,
                 street1 = street1,
                 street2 = street2,
                 city = city,

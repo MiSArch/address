@@ -3,6 +3,7 @@ package org.misarch.address.service
 import kotlinx.coroutines.reactor.awaitSingle
 import org.misarch.address.event.AddressEvents
 import org.misarch.address.event.EventPublisher
+import org.misarch.address.event.model.ArchiveUserAddressDTO
 import org.misarch.address.graphql.AuthorizedUser
 import org.misarch.address.graphql.input.ArchiveUserAddressInput
 import org.misarch.address.graphql.input.CreateUserAddressInput
@@ -66,7 +67,7 @@ class UserAddressService(
         }
         userAddress.isArchived = true
         val savedUserAddress = repository.save(userAddress).awaitSingle()
-        eventPublisher.publishEvent(AddressEvents.USER_ADDRESS_ARCHIVED, savedUserAddress.toEventDTO())
+        eventPublisher.publishEvent(AddressEvents.USER_ADDRESS_ARCHIVED, ArchiveUserAddressDTO(userAddress.id!!))
         return savedUserAddress
     }
 
