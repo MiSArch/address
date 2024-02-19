@@ -11,7 +11,7 @@ CREATE TABLE AddressEntity (
     city VARCHAR(255) NOT NULL,
     postalCode VARCHAR(255) NOT NULL,
     country VARCHAR(255) NOT NULL,
-    companyName VARCHAR(255) NOT NULL,
+    companyName VARCHAR(255) NULL,
     userId UUID NULL,
     isArchived BOOLEAN NOT NULL,
     version BIGSERIAL,
