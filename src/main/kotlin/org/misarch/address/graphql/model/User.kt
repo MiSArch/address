@@ -22,7 +22,7 @@ class User(
 ) : Node(id) {
 
     @GraphQLDescription("Get all address the user received")
-    fun address(
+    fun addresses(
         @GraphQLDescription("Number of items to return")
         first: Int? = null,
         @GraphQLDescription("Number of items to skip")

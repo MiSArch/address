@@ -11,22 +11,21 @@ import java.util.*
  * Repository for [AddressEntity]s
  */
 @Repository
-interface AddressRepository : QuerydslR2dbcRepository<AddressEntity, UUID> {
+interface AddressRepository : QuerydslR2dbcRepository<AddressEntity, UUID>
 
-    /**
-     * Find the current vendor address
-     *
-     * @return the current vendor address or null if there is no current vendor address
-     */
-    suspend fun findCurrentVendorAddress(): AddressEntity? {
-        return query {
-            val entity = AddressEntity.ENTITY
-            it.select(entityProjection())
-                .from(entity)
-                .where(entity.userId.isNull)
-                .orderBy(entity.version.desc())
-                .limit(1)
-        }.first().awaitSingleOrNull()
-    }
 
+/**
+ * Find the current vendor address
+ *
+ * @return the current vendor address or null if there is no current vendor address
+ */
+suspend fun AddressRepository.findCurrentVendorAddress(): AddressEntity? {
+    return query {
+        val entity = AddressEntity.ENTITY
+        it.select(entityProjection())
+            .from(entity)
+            .where(entity.userId.isNull)
+            .orderBy(entity.version.desc())
+            .limit(1)
+    }.first().awaitSingleOrNull()
 }

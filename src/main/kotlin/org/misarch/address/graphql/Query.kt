@@ -8,6 +8,7 @@ import org.misarch.address.graphql.model.Address
 import org.misarch.address.graphql.model.UserAddress
 import org.misarch.address.graphql.model.VendorAddress
 import org.misarch.address.persistence.repository.AddressRepository
+import org.misarch.address.persistence.repository.findCurrentVendorAddress
 import org.springframework.stereotype.Component
 import java.util.*
 import java.util.concurrent.CompletableFuture
