@@ -1,7 +1,7 @@
 package org.misarch.address.graphql.input
 
 import com.expediagroup.graphql.generator.annotations.GraphQLDescription
-import java.util.UUID
+import java.util.*
 
 @GraphQLDescription("Input for the archiveUserAddress mutation.")
 class ArchiveUserAddressInput(

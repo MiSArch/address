@@ -9,7 +9,7 @@ import graphql.schema.GraphQLType
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import java.time.OffsetDateTime
-import java.util.UUID
+import java.util.*
 import kotlin.reflect.KType
 
 @Configuration

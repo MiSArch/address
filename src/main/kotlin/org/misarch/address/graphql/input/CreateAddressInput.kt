@@ -1,7 +1,6 @@
 package org.misarch.address.graphql.input
 
 import com.expediagroup.graphql.generator.annotations.GraphQLDescription
-import java.util.*
 
 /**
  * Base class for [CreateUserAddressInput] and [CreateVendorAddressInput]

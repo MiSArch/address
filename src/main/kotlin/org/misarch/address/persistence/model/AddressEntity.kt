@@ -8,7 +8,6 @@ import org.misarch.address.graphql.model.UserAddress
 import org.misarch.address.graphql.model.VendorAddress
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
-import java.time.OffsetDateTime
 import java.util.*
 
 /**

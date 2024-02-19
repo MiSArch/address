@@ -1,6 +1,6 @@
 package org.misarch.address.graphql
 
-import java.util.UUID
+import java.util.*
 
 /**
  * Represents an authorized user.

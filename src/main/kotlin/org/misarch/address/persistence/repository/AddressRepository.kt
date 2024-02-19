@@ -3,7 +3,6 @@ package org.misarch.address.persistence.repository
 import com.infobip.spring.data.r2dbc.QuerydslR2dbcRepository
 import kotlinx.coroutines.reactor.awaitSingleOrNull
 import org.misarch.address.persistence.model.AddressEntity
-import org.springframework.data.r2dbc.repository.Query
 import org.springframework.stereotype.Repository
 import java.util.*
 

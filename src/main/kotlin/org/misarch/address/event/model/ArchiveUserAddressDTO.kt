@@ -1,6 +1,6 @@
 package org.misarch.address.event.model
 
-import java.util.UUID
+import java.util.*
 
 /**
  * DTO for archive user address events

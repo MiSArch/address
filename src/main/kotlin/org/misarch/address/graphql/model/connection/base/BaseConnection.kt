@@ -11,8 +11,8 @@ import com.querydsl.core.types.dsl.Expressions
 import com.querydsl.sql.RelationalPathBase
 import com.querydsl.sql.SQLQuery
 import kotlinx.coroutines.reactor.awaitSingle
-import org.misarch.address.persistence.model.BaseEntity
 import org.misarch.address.graphql.AuthorizedUser
+import org.misarch.address.persistence.model.BaseEntity
 
 /**
  * A GraphQL connection that is backed by a QueryDSL repository

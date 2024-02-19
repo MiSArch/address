@@ -1,6 +1,6 @@
 package org.misarch.address.event.model
 
-import java.util.UUID
+import java.util.*
 
 /**
  * Entity for the user address created event
