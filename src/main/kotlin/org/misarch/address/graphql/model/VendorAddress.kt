@@ -14,5 +14,5 @@ class VendorAddress(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String
+    companyName: String?
 ) : Address(id, street1, street2, city, postalCode, country, companyName)

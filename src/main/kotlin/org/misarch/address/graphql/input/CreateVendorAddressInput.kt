@@ -9,5 +9,5 @@ class CreateVendorAddressInput(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String,
+    companyName: String?,
 ) : CreateAddressInput(street1, street2, city, postalCode, country, companyName)

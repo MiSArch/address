@@ -20,5 +20,5 @@ class VendorAddressDTO(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String
+    companyName: String?
 ) : AddressDTO(id, street1, street2, city, postalCode, country, companyName)

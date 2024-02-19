@@ -21,5 +21,5 @@ abstract class AddressDTO(
     val city: String,
     val postalCode: String,
     val country: String,
-    val companyName: String,
+    val companyName: String?,
 )

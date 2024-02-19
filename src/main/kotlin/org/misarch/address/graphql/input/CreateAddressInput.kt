@@ -17,5 +17,5 @@ abstract class CreateAddressInput(
     @property:GraphQLDescription("The country part of the address to create")
     val country: String,
     @property:GraphQLDescription("The company name part of the address to create")
-    val companyName: String
+    val companyName: String?
 )

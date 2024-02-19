@@ -17,5 +17,5 @@ abstract class Address(
     @property:GraphQLDescription("The country part of the address")
     val country: String,
     @property:GraphQLDescription("The company name part of the address")
-    val companyName: String
+    val companyName: String?
 ) : Node(id)

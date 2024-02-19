@@ -21,6 +21,6 @@ class UserAddressDTO(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String,
+    companyName: String?,
     val userId: UUID,
 ) : AddressDTO(id, street1, street2, city, postalCode, country, companyName)

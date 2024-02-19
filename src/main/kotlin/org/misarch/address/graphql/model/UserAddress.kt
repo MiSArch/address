@@ -17,7 +17,7 @@ class UserAddress(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String,
+    companyName: String?,
     internal val userId: UUID,
     @property:GraphQLDescription("If true, this address is archived and can no longer be used.")
     val isArchived: Boolean

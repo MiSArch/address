@@ -10,7 +10,7 @@ class CreateUserAddressInput(
     city: String,
     postalCode: String,
     country: String,
-    companyName: String,
+    companyName: String?,
     @property:GraphQLDescription("The id of the user to create the address for.")
     val userId: UUID,
 ) : CreateAddressInput(street1, street2, city, postalCode, country, companyName)

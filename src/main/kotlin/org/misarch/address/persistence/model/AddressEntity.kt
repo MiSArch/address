@@ -28,7 +28,7 @@ class AddressEntity(
     val city: String,
     val postalCode: String,
     val country: String,
-    val companyName: String,
+    val companyName: String?,
     val userId: UUID?,
     val version: Long?,
     var isArchived: Boolean,
