@@ -82,7 +82,9 @@ class UserAddressFilter(
 
     override fun toExpression(): BooleanExpression? {
         return if (isArchived != null) {
-            AddressEntity.ENTITY.isArchived.eq(isArchived)
+            AddressEntity.ENTITY.archivedAt.let {
+                if (isArchived) it.isNotNull else it.isNull
+            }
         } else {
             null
         }

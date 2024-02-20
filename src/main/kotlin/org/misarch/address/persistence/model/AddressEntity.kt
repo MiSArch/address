@@ -8,6 +8,7 @@ import org.misarch.address.graphql.model.UserAddress
 import org.misarch.address.graphql.model.VendorAddress
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
+import java.time.OffsetDateTime
 import java.util.*
 
 /**
@@ -31,7 +32,7 @@ class AddressEntity(
     val companyName: String?,
     val userId: UUID?,
     val version: Long?,
-    var isArchived: Boolean,
+    var archivedAt: OffsetDateTime?,
     @Id
     override val id: UUID?
 ) : BaseEntity<Address> {
@@ -54,7 +55,7 @@ class AddressEntity(
                 country = country,
                 companyName = companyName,
                 userId = userId,
-                isArchived = isArchived
+                archivedAt = archivedAt
             )
         } else {
             VendorAddress(

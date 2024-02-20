@@ -13,7 +13,7 @@ CREATE TABLE AddressEntity (
     country VARCHAR(255) NOT NULL,
     companyName VARCHAR(255) NULL,
     userId UUID NULL,
-    isArchived BOOLEAN NOT NULL,
+    archivedAt TIMESTAMPTZ NULL,
     version BIGSERIAL,
     FOREIGN KEY (userId) REFERENCES UserEntity(id)
 );

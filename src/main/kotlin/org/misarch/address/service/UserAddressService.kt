@@ -11,6 +11,7 @@ import org.misarch.address.persistence.model.AddressEntity
 import org.misarch.address.persistence.repository.AddressRepository
 import org.misarch.address.persistence.repository.UserRepository
 import org.springframework.stereotype.Service
+import java.time.OffsetDateTime
 
 /**
  * Service for [AddressEntity]s
@@ -46,7 +47,7 @@ class UserAddressService(
             userId = userAddressInput.userId,
             id = null,
             version = null,
-            isArchived = false
+            archivedAt = null
         )
         val savedUserAddress = repository.save(userAddress).awaitSingle()
         eventPublisher.publishEvent(AddressEvents.USER_ADDRESS_CREATED, savedUserAddress.toEventDTO())
@@ -65,7 +66,7 @@ class UserAddressService(
         if (userAddress.userId != authorizedUser.id) {
             authorizedUser.checkIsEmployee()
         }
-        userAddress.isArchived = true
+        userAddress.archivedAt = OffsetDateTime.now()
         val savedUserAddress = repository.save(userAddress).awaitSingle()
         eventPublisher.publishEvent(AddressEvents.USER_ADDRESS_ARCHIVED, ArchiveUserAddressDTO(userAddress.id!!))
         return savedUserAddress

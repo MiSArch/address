@@ -37,7 +37,7 @@ class VendorAddressService(
             userId = null,
             id = null,
             version = null,
-            isArchived = false
+            archivedAt = null
         )
         val savedVendorAddress = repository.save(vendorAddress).awaitSingle()
         eventPublisher.publishEvent(AddressEvents.VENDOR_ADDRESS_CREATED, savedVendorAddress.toEventDTO())
