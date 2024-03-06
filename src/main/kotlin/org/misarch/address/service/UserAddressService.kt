@@ -61,14 +61,18 @@ class UserAddressService(
      * @param archiveUserAddressInput defines the user address to archive
      * @return the archived user address
      */
-    suspend fun archiveUserAddress(archiveUserAddressInput: ArchiveUserAddressInput, authorizedUser: AuthorizedUser): AddressEntity {
+    suspend fun archiveUserAddress(
+        archiveUserAddressInput: ArchiveUserAddressInput, authorizedUser: AuthorizedUser
+    ): AddressEntity {
         val userAddress = repository.findById(archiveUserAddressInput.id).awaitSingle()
         if (userAddress.userId != authorizedUser.id) {
             authorizedUser.checkIsEmployee()
         }
         userAddress.archivedAt = OffsetDateTime.now()
         val savedUserAddress = repository.save(userAddress).awaitSingle()
-        eventPublisher.publishEvent(AddressEvents.USER_ADDRESS_ARCHIVED, ArchiveUserAddressDTO(userAddress.id!!))
+        eventPublisher.publishEvent(
+            AddressEvents.USER_ADDRESS_ARCHIVED, ArchiveUserAddressDTO(userAddress.id!!, userAddress.userId!!)
+        )
         return savedUserAddress
     }
 
