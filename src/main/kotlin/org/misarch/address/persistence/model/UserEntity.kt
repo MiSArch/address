@@ -5,6 +5,11 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
 import java.util.*
 
+/**
+ * Entity for users
+ *
+ * @property id unique identifier of the user
+ */
 @Table
 class UserEntity(
     @Id
