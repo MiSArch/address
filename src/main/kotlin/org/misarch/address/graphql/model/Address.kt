@@ -6,6 +6,8 @@ import java.util.*
 @GraphQLDescription("An address.")
 abstract class Address(
     id: UUID,
+    @property:GraphQLDescription("The name of the address")
+    val name: Name?,
     @property:GraphQLDescription("The first part of the street part of the address")
     val street1: String,
     @property:GraphQLDescription("The second part of the street part of the address")

@@ -5,6 +5,7 @@ import java.util.*
 
 @GraphQLDescription("Input for the createUserAddress mutation.")
 class CreateUserAddressInput(
+    name: NameInput?,
     street1: String,
     street2: String,
     city: String,
@@ -13,4 +14,4 @@ class CreateUserAddressInput(
     companyName: String?,
     @property:GraphQLDescription("The id of the user to create the address for.")
     val userId: UUID,
-) : CreateAddressInput(street1, street2, city, postalCode, country, companyName)
+) : CreateAddressInput(name, street1, street2, city, postalCode, country, companyName)

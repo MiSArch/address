@@ -1,9 +1,11 @@
 package org.misarch.address.persistence.model
 
 import org.misarch.address.event.model.AddressDTO
+import org.misarch.address.event.model.NameDTO
 import org.misarch.address.event.model.UserAddressDTO
 import org.misarch.address.event.model.VendorAddressDTO
 import org.misarch.address.graphql.model.Address
+import org.misarch.address.graphql.model.Name
 import org.misarch.address.graphql.model.UserAddress
 import org.misarch.address.graphql.model.VendorAddress
 import org.springframework.data.annotation.Id
@@ -24,6 +26,8 @@ import java.util.*
  */
 @Table
 class AddressEntity(
+    val firstName: String?,
+    val lastName: String?,
     val street1: String,
     val street2: String,
     val city: String,
@@ -45,9 +49,18 @@ class AddressEntity(
     }
 
     override fun toDTO(): Address {
+        val name = if (firstName != null && lastName != null) {
+            Name(
+                firstName = firstName,
+                lastName = lastName
+            )
+        } else {
+            null
+        }
         return if (userId != null) {
             UserAddress(
                 id = id!!,
+                name = name,
                 street1 = street1,
                 street2 = street2,
                 city = city,
@@ -60,6 +73,7 @@ class AddressEntity(
         } else {
             VendorAddress(
                 id = id!!,
+                name = name,
                 street1 = street1,
                 street2 = street2,
                 city = city,
@@ -76,9 +90,18 @@ class AddressEntity(
      * @return the event DTO
      */
     fun toEventDTO(): AddressDTO {
+        val name = if (firstName != null && lastName != null) {
+            NameDTO(
+                firstName = firstName,
+                lastName = lastName
+            )
+        } else {
+            null
+        }
         return if (userId != null) {
             UserAddressDTO(
                 id = id!!,
+                name = name,
                 street1 = street1,
                 street2 = street2,
                 city = city,
@@ -90,6 +113,7 @@ class AddressEntity(
         } else {
             VendorAddressDTO(
                 id = id!!,
+                name = name,
                 street1 = street1,
                 street2 = street2,
                 city = city,

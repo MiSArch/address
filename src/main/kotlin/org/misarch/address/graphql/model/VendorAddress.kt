@@ -9,10 +9,11 @@ import java.util.*
 @KeyDirective(fields = FieldSet("id"))
 class VendorAddress(
     id: UUID,
+    name: Name?,
     street1: String,
     street2: String,
     city: String,
     postalCode: String,
     country: String,
     companyName: String?
-) : Address(id, street1, street2, city, postalCode, country, companyName)
+) : Address(id, name, street1, street2, city, postalCode, country, companyName)
