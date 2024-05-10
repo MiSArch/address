@@ -38,6 +38,8 @@ class UserAddressService(
             throw IllegalArgumentException("User with id ${userAddressInput.userId} does not exist")
         }
         val userAddress = AddressEntity(
+            firstName = userAddressInput.name?.firstName,
+            lastName = userAddressInput.name?.lastName,
             street1 = userAddressInput.street1,
             street2 = userAddressInput.street2,
             city = userAddressInput.city,

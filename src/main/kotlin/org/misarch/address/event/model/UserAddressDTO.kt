@@ -6,6 +6,7 @@ import java.util.*
  * Entity for the user address created event
  * 
  * @param id id of the address
+ * @param name name of the address
  * @param street1 first line of the address
  * @param street2 second line of the address
  * @param city city of the address
@@ -16,6 +17,7 @@ import java.util.*
  */
 class UserAddressDTO(
     id: UUID,
+    name: NameDTO?,
     street1: String,
     street2: String,
     city: String,
@@ -23,4 +25,4 @@ class UserAddressDTO(
     country: String,
     companyName: String?,
     val userId: UUID,
-) : AddressDTO(id, street1, street2, city, postalCode, country, companyName)
+) : AddressDTO(id, name, street1, street2, city, postalCode, country, companyName)

@@ -28,6 +28,8 @@ class VendorAddressService(
      */
     suspend fun createVendorAddress(vendorAddressInput: CreateVendorAddressInput): AddressEntity {
         val vendorAddress = AddressEntity(
+            firstName = vendorAddressInput.name?.firstName,
+            lastName = vendorAddressInput.name?.lastName,
             street1 = vendorAddressInput.street1,
             street2 = vendorAddressInput.street2,
             city = vendorAddressInput.city,

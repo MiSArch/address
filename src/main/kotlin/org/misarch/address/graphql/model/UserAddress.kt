@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture
 @KeyDirective(fields = FieldSet("id"))
 class UserAddress(
     id: UUID,
+    name: Name?,
     street1: String,
     street2: String,
     city: String,
@@ -22,7 +23,7 @@ class UserAddress(
     internal val userId: UUID,
     @property:GraphQLDescription("If this address is archived, the datetime it was archived.")
     val archivedAt: OffsetDateTime?
-) : Address(id, street1, street2, city, postalCode, country, companyName) {
+) : Address(id, name, street1, street2, city, postalCode, country, companyName) {
 
     @GraphQLDescription("If true, this address is archived and can no longer be used.")
     val isArchived: Boolean

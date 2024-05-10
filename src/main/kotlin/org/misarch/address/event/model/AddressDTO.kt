@@ -7,6 +7,7 @@ import java.util.*
  * Parent of [UserAddressDTO] and [VendorAddressDTO]
  *
  * @property id id of the address
+ * @property name name of the address
  * @property street1 first line of the address
  * @property street2 second line of the address
  * @property city city of the address
@@ -16,6 +17,7 @@ import java.util.*
  */
 abstract class AddressDTO(
     val id: UUID,
+    val name: NameDTO?,
     val street1: String,
     val street2: String,
     val city: String,
